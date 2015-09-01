@@ -94,14 +94,11 @@ public class ListFragment extends Fragment {
 
         } catch (ClassCastException castException) {
             /**
-             * If this error happens, means that the Activity that is using
+             * If this error rises, means that the Activity that is using
              * this fragment doesn't have a OnItemSelectedFromTheList
              * implementation.
              */
         }
     }
 
-    public void setLayoutMode(Integer mLayoutMode) {
-        layoutMode = mLayoutMode;
-    }
 }

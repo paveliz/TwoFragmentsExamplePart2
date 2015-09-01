@@ -26,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedFro
     DetailFragment fragmentDetail;
     ListFragment fragmentList;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,19 +57,6 @@ public class MainActivity extends AppCompatActivity implements OnItemSelectedFro
             }
         }
 
-        /**
-         * The FragmentList will be always present, because it has been incldued
-         * as a fragment in both layouts (Land and Port).
-         *
-         * The only thing that I need to do it's to notify this fragment about
-         * the Layout that is in use so it can manage the OnItemClick event in
-         * the ListView in a different way.
-         */
-
-        fragmentList = ((ListFragment)getSupportFragmentManager()
-                .findFragmentById(R.id.fragment_list));
-
-        fragmentList.setLayoutMode(layoutMode);
     }
 
     /**
