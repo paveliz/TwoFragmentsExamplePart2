@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Two Fragments Example Part 2</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="sin_alumnos_warning">You must to choose someone from the list</string>
+
+    <string-array name="alumnos">
+        <item>Ricardo Tapia</item>
+        <item>Marcelo Tinelli</item>
+        <item>Tony Kamo</item>
+        <item>Anakin Skywalker</item>
+        <item>Pedro Picapiedra</item>
+        <item>Anibal Smith</item>
+        <item>Bruno Diaz</item>
+        <item>Martin McFly</item>
+        <item>Adam West</item>
+    </string-array>
+    <string name="title_activity_detail">DetailActivity</string>
+
+</resources>
