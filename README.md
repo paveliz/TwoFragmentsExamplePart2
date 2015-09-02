@@ -18,51 +18,39 @@ The main layout in landscape mode, will include the main fragment and a second f
 
 Notice that this layout use a LinearLayout with an Horizontal Divider and of course, Horizontal orientation:
 
-android:divider="?android:dividerHorizontal"
-android:orientation="horizontal"
+android:divider="?android:dividerHorizontal"android:orientation="horizontal"
 
 Also, notice that I'm using the "android:layout_weight" property according the Android Developer documentation: http://developer.android.com/guide/topics/ui/layout/linear.html#Weight
 
 2) Second fragment detection
 
-Because the main activity will use the both activity_main.xml according the layout orientation I need to find a way to detect if I'm using the layout with one fragment or the layout with two fragments, because if not..., well, nothing it's going to work well.
+Because the main activity will use the both activity_main.xml according the layout orientation I need to find a way to detect if I'm using the layout with one fragment or the layout with two fragments, because if not..., well..., nothing it's going to work well.
 
-To do this, I basically asking with the following line if the second framework exists or not:
+To do this, I basically "ask" with the following line if the second framework exists or not:
 
 if (findViewById(R.id.fragment_detail)!=null)
 
-If this conditions its "True", it's because I'm in landscape mode and I'm using the Two Fragments Layout so I need to call the second fragment and show it. If not, there is nothing to worry, because I'm using the one fragment layout that it's already included and called in the layout.
+If this conditions its "True", it's because I'm in landscape mode and I'm using the Two Fragments Layout so I need to call the second fragment and show it. If not, there is nothing to worry, because I'm using the main fragment layout that it's already included and called in the layout.
 
 As a result, the main activity will add the second fragment only when he detect need to do it.
 
-3) Parameters
+3) Fragment calls a method in the Activity (NO hardcoding)
 
-But I also need that the main fragment knows when it's called in landscape or portrait. Because it it's always loaded, I'm using the findFragmentById to find it and pass a layout parameter predefined by me.
+I need to find a way to manage the OnItemClickListener from the ListView in the DetailFragment but calling a method in the MainActivity.
 
-fragmentList = ((ListFragment)getSupportFragmentManager()
-        .findFragmentById(R.id.fragment_list));
-
-fragmentList.setLayoutMode(layoutMode);
-
-With this parameter, the setOnItemClickListener event now knows if it needs to 
-
-4) Fragment calls a method in the Activity (NO hardcoding)
-
-I need to find a way to manage to manage the OnItemClickListener from the ListView in the DetailFragment but calling a method in the MainActivity.
+Why?
 
 Basically:
 
-a) I don't want to put references or calls for Activities inside the OnItemClickListener event in the DetailFragment. It supposed that fragments need to be "reusable", so you should not put references to external activities inside.
+a) I don't want to put references or calls to others Activities inside the OnItemClickListener event in the DetailFragment. It supposed that fragments need to be "reusable", so you should not put references to external activities inside.
 
 b) I want to call an independent method created in the MainActivity from the OnItemClickListener event in the DetailFragment but, I don't want to create a "hardcoding" relationship between both parts. Because again..., I don't know who is going to reuse this fragment in the feature calling it from another activity!
 
 The Result:
-
-- I create an Interface with a method.
+- I created an Interface that includes a method.
 - I implemented this method in the MainActivity.
 - I got an instance of the Activity that creates the DetailFragment in the "onAttach" event inside the DetailFragment.
 - I used the instance to access the method that then is called in the ListView.
-
 This is a "clear" way to call a method from a Fragment to an Activity without compromise the independence of the fragment.
 
 As a result, I created what I understand it's a very simple example that covers:
