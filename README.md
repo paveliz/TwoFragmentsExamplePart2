@@ -52,9 +52,9 @@ I need to find a way to manage to manage the OnItemClickListener from the ListVi
 
 Basically:
 
-1) I don't want to put references or calls for Activities inside the OnItemClickListener event in the DetailFragment. It supposed that fragments need to be "reusable", so you should not put references to external activities inside.
+a) I don't want to put references or calls for Activities inside the OnItemClickListener event in the DetailFragment. It supposed that fragments need to be "reusable", so you should not put references to external activities inside.
 
-2) I want to call an independent method created in the MainActivity from the OnItemClickListener event in the DetailFragment but, I don't want to create a "hardcoding" relationship between both parts. Because again..., I don't know who is going to reuse this fragment in the feature calling it from another activity!
+b) I want to call an independent method created in the MainActivity from the OnItemClickListener event in the DetailFragment but, I don't want to create a "hardcoding" relationship between both parts. Because again..., I don't know who is going to reuse this fragment in the feature calling it from another activity!
 
 The Result:
 
@@ -70,6 +70,17 @@ As a result, I created what I understand it's a very simple example that covers:
 - Managing different layouts between landscape and portrait.
 - Implementing and reusing fragments between layouts.
 - Uncouple methods calling between fragments and activities.
+
+Main Layout in Portrait:
+
+![Portrait Layout](https://dl.dropboxusercontent.com/u/5130730/Github/layout_main1.PNG)
+
+![Portrait Layout](https://dl.dropboxusercontent.com/u/5130730/Github/layout_main2.PNG)
+
+Main Layout in Landscape:
+
+![Portrait Layout](https://dl.dropboxusercontent.com/u/5130730/Github/layout_main3.PNG)
+
 
 Hope it helps you to understand this concepts. But if you find any doubts or if you find any issue or suggestions to improve this example, please, don't hesitate to contact me.
 
