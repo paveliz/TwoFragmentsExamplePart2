@@ -72,3 +72,7 @@ As a result, I created what I understand it's a very simple example that covers:
 - Uncouple methods calling between fragments and activities.
 
 Hope it helps you to understand this concepts. But if you find any doubts or if you find any issue or suggestions to improve this example, please, don't hesitate to contact me.
+
+-----------------------------------------
+Pablo Angel Veliz
+https://ar.linkedin.com/in/pabloveliz
