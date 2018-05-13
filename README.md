@@ -61,13 +61,13 @@ As a result, I created what I understand it's a very simple example that covers:
 
 Main Layout in Portrait:
 
-![Portrait Layout](https://dl.dropboxusercontent.com/u/5130730/Github/layout_main1.PNG)
+![Portrait Layout](https://s3-us-west-2.amazonaws.com/paveliz-github-images/layout_main1.PNG)
 
-![Portrait Layout](https://dl.dropboxusercontent.com/u/5130730/Github/layout_main2.PNG)
+![Portrait Layout](https://s3-us-west-2.amazonaws.com/paveliz-github-images/layout_main2.PNG)
 
 Main Layout in Landscape:
 
-![Portrait Layout](https://dl.dropboxusercontent.com/u/5130730/Github/layout_main3.PNG)
+![Portrait Layout](https://s3-us-west-2.amazonaws.com/paveliz-github-images/layout_main3.PNG)
 
 
 Hope it helps you to understand this concepts. But if you find any doubts or if you find any issue or suggestions to improve this example, please, don't hesitate to contact me.
