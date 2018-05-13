@@ -1,6 +1,6 @@
 When I started to study fragments on Android, I discover the following example on the Developer Android Site: http://developer.android.com/guide/components/fragments.html
 
-Basically, 1 Activity that change two fragments according the layout. It's sounds very useful but this documentation lacks of code that can help me to understand how to create this kind of layouts and fragment interaction.
+Basically, 1 Activity that changes two fragments according to the layout. It sounds very useful but this documentation lacks code that can help me to understand how to create this kind of layouts and fragment interaction.
 
 This is because I created this small example focused on solve the two fragments interaction with 1 main layout.
 
@@ -10,21 +10,21 @@ I created two activity_main.xml layouts, one in the "layout" folder (default) an
 
 activity_main.xml (portrait)
 
-The main layout in portrait mode, will only include the main fragment directly.
+The main layout in portrait mode will only include the main fragment directly.
 
 activity_main.xml (landscape)
 
-The main layout in landscape mode, will include the main fragment and a second framelayout that I will use as a "container" for the second fragment that will be added programmatically. 
+The main layout in landscape mode will include the main fragment and a second framelayout that I will use as a "container" for the second fragment that will be added programmatically. 
 
 Notice that this layout use a LinearLayout with an Horizontal Divider and of course, Horizontal orientation:
 
 android:divider="?android:dividerHorizontal"android:orientation="horizontal"
 
-Also, notice that I'm using the "android:layout_weight" property according the Android Developer documentation: http://developer.android.com/guide/topics/ui/layout/linear.html#Weight
+Also, notice that I'm using the "android:layout_weight" property according to the Android Developer documentation: http://developer.android.com/guide/topics/ui/layout/linear.html#Weight
 
 2) Second fragment detection
 
-Because the main activity will use the both activity_main.xml according the layout orientation I need to find a way to detect if I'm using the layout with one fragment or the layout with two fragments, because if not..., well..., nothing it's going to work well.
+Because the main activity will use both activity_main.xml according to the layout orientation I need to find a way to detect if I'm using the layout with one fragment or the layout with two fragments because if not..., well..., nothing it's going to work well.
 
 To do this, I basically "ask" with the following line if the second framework exists or not:
 
@@ -32,7 +32,7 @@ if (findViewById(R.id.fragment_detail)!=null)
 
 If this conditions its "True", it's because I'm in landscape mode and I'm using the Two Fragments Layout so I need to call the second fragment and show it. If not, there is nothing to worry, because I'm using the main fragment layout that it's already included and called in the layout.
 
-As a result, the main activity will add the second fragment only when he detect need to do it.
+As a result, the main activity will add the second fragment only when he detects need to do it.
 
 3) Fragment calls a method in the Activity (NO hardcoding)
 
@@ -70,7 +70,7 @@ Main Layout in Landscape:
 ![Portrait Layout](https://s3-us-west-2.amazonaws.com/paveliz-github-images/layout_main3.PNG)
 
 
-Hope it helps you to understand this concepts. But if you find any doubts or if you find any issue or suggestions to improve this example, please, don't hesitate to contact me.
+Hope it helps you to understand these concepts. But if you find any doubts or if you find any issue or suggestions to improve this example, please, don't hesitate to contact me.
 
 -----------------------------------------
 Pablo Angel Veliz
